@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grocery List</title>
+    <!-- Scripts -->
+    <script src="angular.min.js"></script>
+    <script>
+      var GroceryList = angular.module('GroceryList', []);
+      GroceryList.controller('ListController', ['$scope', function ($scope) {
+        $scope.greeting = "Hello!";
+      }]);
+    </script>
+  </head>
+  <body ng-app="GroceryList" ng-controller="ListController">
+    <p>Hello? {{ greeting }}</p>
+  </body>
+</html>
