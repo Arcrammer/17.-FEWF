@@ -2,3 +2,74 @@
     Grocery List
     Monday, 4 May, 2015
     Alexander Rhett Crammer  */
+
+/* Structure */
+body {
+  background-color: rgba(0,0,0,0.035);
+}
+
+.container {
+  font-family: "Helvetica Neue", "Helvetica", "Source Sans Pro", "Open Sans Pro", "Arial", sans-serif;
+  font-weight: 200;
+  letter-spacing: 0.5px;
+  line-height: 175%;
+  margin: 5% auto;
+  text-align: center;
+  width: 500px;
+}
+
+/* Addition Field */
+input[type="text"] {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 16px;
+  padding: 15px;
+}
+
+/* Buttons */
+input[value="+"].btn {
+  background-color: #4fdc90;
+}
+
+input[value="+"].btn:hover {
+  background-color: #69e8a4;
+}
+
+input[value="+"].btn:active {
+  background-color: #3a9f69;
+}
+
+.btn {
+  background-color: #f25555;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  margin: 5px;
+  padding: 15px;
+  min-height: 45px;
+  min-width: 45px;
+  outline: none;
+  transition: all 125ms;
+}
+
+.btn:hover {
+  background-color: #f73a3a;
+}
+
+.btn:active {
+  background-color: #bc2828;
+}
+
+/* List */
+ul {
+  list-style-type: none;
+  margin: auto;
+  margin-top: 5%;
+  margin-right: 23.75%;
+  text-align: right;
+}
+
+/* Subtraction Buttons */
+button.btn {
+  margin-left: 5%;
+}
