@@ -2,16 +2,17 @@
 <html>
   <head>
     <title>Grocery List</title>
+    <!-- Links -->
+    <link rel="stylesheet" href="Assets/Stylesheets/Main.css">
     <!-- Scripts -->
-    <script src="angular.min.js"></script>
-    <script>
-      var GroceryList = angular.module('GroceryList', []);
-      GroceryList.controller('ListController', ['$scope', function ($scope) {
-        $scope.greeting = "Hello!";
-      }]);
-    </script>
+    <script src="Assets/Scripts/angular.min.js"></script>
+    <script src="Assets/Scripts/Main.js"></script>
   </head>
   <body ng-app="GroceryList" ng-controller="ListController">
-    <p>Hello? {{ greeting }}</p>
-  </body>
+    <div class="container">
+      <input ng-model="newGroceryItem" type="text" placeholder="Add an item...">
+      <input class="btn" ng-click="groceries.push(newGroceryItem)" type="button" value="+">
+      <ul><li ng-repeat="grocery in groceries">{{ grocery }}<button class="btn" ng-click="subtractGrocery(grocery)">-</button></li></ul>
+    </div> <!-- .container -->
+  </body> <!-- GroceryList -> ListController -->
 </html>
