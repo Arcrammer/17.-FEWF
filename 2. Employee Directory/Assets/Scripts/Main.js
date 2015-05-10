@@ -100,6 +100,11 @@ EmployeeData.controller("ListController", ["$scope", "DataService", function ($s
     localStorage.setItem("Employees", JSON.stringify(localEmployeeData));
     window.location.reload();
   }
+  
+  $scope.resetEverything = function () {
+    localStorage.clear();
+    window.location.reload();
+  }
 }]);
 
 /* Caleb Grove's stateToAbbr.js https://gist.github.com/CalebGrove/c285a9510948b633aa47 */

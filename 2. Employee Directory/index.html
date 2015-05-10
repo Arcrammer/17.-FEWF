@@ -49,7 +49,8 @@
             <span class="input-group-addon">ZIP: </span></span>
             <input class="form-control" type="text" id="ZIP">
           </div> <!-- .input-group -->
-          <button class="creation-button btn btn-success" ng-click="addEmployee()">Create</button>
+          <button class="form-button btn btn-success" ng-click="addEmployee()">Create</button>
+          <button class="form-button btn btn-warning" ng-click="resetEverything()">Reset</button>
         </form>
       </div> <!-- .new-employee-form .row .col-md-4 .col-xs-12 -->
       <div class="employee panel panel-default col-md-7 col-xs-12" ng-repeat="person in people track by $index | filter:searchText">
