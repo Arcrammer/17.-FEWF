@@ -13,4 +13,8 @@ GroceryList.controller('ListController', ['$scope', function ($scope) {
     var namedGroceryIndex = $scope.groceries.indexOf(named);
     $scope.groceries.splice(namedGroceryIndex, 1);
   }
+  
+  $scope.groceries.push = function () {
+    document.getElementById("newItemField").value = "";
+  }
 }]);

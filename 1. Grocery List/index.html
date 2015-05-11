@@ -10,7 +10,7 @@
   </head>
   <body ng-app="GroceryList" ng-controller="ListController">
     <div class="container">
-      <input ng-model="newGroceryItem" type="text" placeholder="Add an item...">
+      <input ng-model="newGroceryItem" type="text" placeholder="Add an item..." id="newItemField">
       <input class="btn" ng-click="groceries.push(newGroceryItem)" type="button" value="+">
       <ul><li ng-repeat="grocery in groceries">{{ grocery }}<button class="btn" ng-click="subtractGrocery(grocery)">-</button></li></ul>
     </div> <!-- .container -->
