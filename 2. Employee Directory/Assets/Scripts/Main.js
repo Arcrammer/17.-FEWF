@@ -8,9 +8,6 @@ var EmployeeData = angular.module("EmployeeData", []);
 
 EmployeeData.controller("ListController", function ($scope, DataService) {
   
-  /* Properties */
-  $scope.people = DataService.fetchEmployees();
-  
   /* Methods */
   $scope.addEmployee = function () {
     // Prevent extra items from being created without intent
@@ -21,13 +18,20 @@ EmployeeData.controller("ListController", function ($scope, DataService) {
         document.getElementById("state").val != "" &&
         document.getElementById("ZIP").val != "") {
       DataService.addEmployee();
+      $scope.updateEmployeeList();
     }
   }
   
   $scope.removeEmployeeAtIndex = function (employeeIndex) {
     // Is this too much just to get `employeeIndex` over to `DataService`?
     DataService.removeEmployeeAtIndex(employeeIndex);
+    $scope.updateEmployeeList();
   }
   
-  $scope.clearStorage = DataService.destroyLocalStorage();
+  $scope.updateEmployeeList = function () {
+    $scope.people = DataService.fetchEmployees();
+  }
+  
+  /* Properties */
+  $scope.updateEmployeeList(); /* This sets $scope.people */
 });

@@ -93,8 +93,8 @@ angular.module("EmployeeData").service("DataService", function () {
     }
     var pulledLocalStorageData = JSON.parse(localStorage.getItem("Employees"));
     pulledLocalStorageData.push(formattedEmployee);
+    this.employees = pulledLocalStorageData;
     localStorage.setItem("Employees", JSON.stringify(pulledLocalStorageData));
-    window.location.reload();
     return true;
   };
   
@@ -103,11 +103,6 @@ angular.module("EmployeeData").service("DataService", function () {
     var pulledLocalStorageData = JSON.parse(localStorage.getItem("Employees"));
     pulledLocalStorageData.splice(employeeIndex, 1);
     localStorage.setItem("Employees", JSON.stringify(pulledLocalStorageData));
-//     window.location.reload();
-  };
-  
-  this.destroyLocalStorage = function () {
-//     localStorage.clear();
   };
   
   /* Caleb Grove's stateToAbbr.js https://gist.github.com/CalebGrove/c285a9510948b633aa47 */
