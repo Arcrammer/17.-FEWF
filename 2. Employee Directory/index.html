@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Employee Directory</title>
+    <!-- Links -->
+      <link rel="stylesheet" href="Assets/Bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="Assets/Stylesheets/Main.css">
+    <!-- Scripts -->
+      <script src="Assets/Scripts/angular.min.js"></script>
+      <script src="Assets/Scripts/Main.js"></script>
+      <script src="Assets/Scripts/DataService.js"></script>
+  </head>
+  <body ng-app="EmployeeData">
+    <div class="container" ng-controller="ListController">
+      <div class="new-employee-form row col-md-4 col-xs-12">
+        <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+          <input class="form-control" type="text" placeholder="Search Employees..." ng-model="searchText">
+        </div> <!-- .input-group -->
+        <hr />
+        <h4 class="callout">Add a new Employee:</h4>
+        <br />
+        <form class="form-group" method="post">
+          <div class="input-group">
+            <span class="input-group-addon">Name: </span></span>
+            <input class="form-control" type="text" id="name">
+          </div> <!-- .input-group -->
+          <br />
+          <div class="input-group">
+            <span class="input-group-addon">Phone: </span></span>
+            <input class="form-control" type="text" id="phone">
+          </div> <!-- .input-group -->
+          <br />
+          <div class="input-group">
+            <span class="input-group-addon">Street: </span></span>
+            <input class="form-control" type="text" id="street">
+          </div> <!-- .input-group -->
+          <br />
+          <div class="input-group">
+            <span class="input-group-addon">City: </span></span>
+            <input class="form-control" type="text" id="city">
+          </div> <!-- .input-group -->
+          <br />
+          <div class="input-group">
+            <span class="input-group-addon">State: </span></span>
+            <input class="form-control" type="text" id="state">
+          </div> <!-- .input-group -->
+          <br />
+          <div class="input-group">
+            <span class="input-group-addon">ZIP: </span></span>
+            <input class="form-control" type="text" id="ZIP">
+          </div> <!-- .input-group -->
+          <button class="form-button btn btn-success" ng-click="addEmployee()">Create</button>
+          <button class="form-button btn btn-warning" ng-click="resetEverything()">Reset</button>
+        </form>
+      </div> <!-- .new-employee-form .row .col-md-4 .col-xs-12 -->
+      <div class="employee panel panel-default col-md-7 col-xs-12" ng-repeat="person in people track by $index | filter:searchText">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            {{ person["name"] }}
+            <span class="deletion-button glyphicon glyphicon-remove-circle" ng-click="removeEmployeeAtIndex($index)"></span>
+          </h4>
+        </div> <!-- .panel-heading -->
+        <div class="panel-body">
+          <div class="col-xs-6">
+            <span class="glyphicon glyphicon-earphone"></span>
+            {{ person["phone"] }}
+          </div> <!-- .col-xs-6 -->
+          <div class="col-xs-6">
+            <span class="glyphicon glyphicon-road"></span>
+            {{ person["address"]["street"] }}<br />
+            {{ person["address"]["city"] }}, {{ person["address"]["state"] }} {{ person["address"]["ZIP"] }}
+          </div> <!-- .col-xs-6 -->
+        </div> <!-- .panel-body -->
+      </div> <!-- .employee .panel .panel-default .col-md-7 .col-xs-12 -->
+    </div> <!-- .container -->
+  </body>
+</html>

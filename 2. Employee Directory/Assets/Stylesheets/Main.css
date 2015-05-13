@@ -1,0 +1,68 @@
+/*  Main.css
+    Employee Directory
+    Saturday, 9 May, 2015
+    Alexander Rhett Crammer  */
+
+/* Structure */
+body {
+  background-color: #fafafa;
+}
+
+.container {
+  margin: 5% auto;
+  width: 80%;
+}
+
+.callout {
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* Employee Bins */
+.employee {
+  float: right;
+  padding: 0;
+}
+
+.employee .panel-body {
+  line-height: 200%;
+  margin: 2.5% 10% 2.5% auto;
+  text-align: right;
+}
+
+.employee .panel-body .glyphicon {
+  margin-right: 5%;
+}
+
+/* Form Buttons */
+.form-button {
+  margin-top: 5%;
+  width: 100%;
+}
+
+/* Deletion Buttons */
+.deletion-button {
+  color: #444;
+  cursor: pointer;
+  float: right;
+  font-size: 1.35em;
+  position: relative;
+  top: -1.5px;
+  right: -5px;
+  transition: color 100ms;
+}
+
+.deletion-button:hover {
+  color: #ea4343;
+}
+
+.deletion-button:active {
+  color: #bc2828;
+  transition: color 35ms;
+}
+
+/* Glyphicons */
+.glyphicon-earphone {
+  transform: rotate(35deg);
+}
