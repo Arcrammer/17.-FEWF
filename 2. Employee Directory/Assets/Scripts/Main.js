@@ -17,6 +17,7 @@ EmployeeData.controller("ListController", function ($scope, DataService) {
         document.getElementById("city").val != "" &&
         document.getElementById("state").val != "" &&
         document.getElementById("ZIP").val != "") {
+      document.forms[0].reset();
       DataService.addEmployee();
       $scope.updateEmployeeList();
     }
