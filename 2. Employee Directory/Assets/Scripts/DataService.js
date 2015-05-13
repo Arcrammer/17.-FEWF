@@ -4,8 +4,8 @@
     Alexander Rhett Crammer  */
 
 angular.module("EmployeeData").service("DataService", function () {
-  if (!localStorage.getItem("Employees")) {
-    localStorage.setItem("Employees", JSON.stringify([
+  /* Properties */
+  var employees = [
       {
           "name":"Nicole G. Weber",
           "address": {
@@ -56,8 +56,17 @@ angular.module("EmployeeData").service("DataService", function () {
           },
           "phone":"+1 (919) 817 - 8945"
         }
-    ]));
-  };
+    ];
+  
+  if (localStorage.getItem("Employees") === null) {
+    // localStorage doesn't have a value for the 'Employees' key
+    console.log("Data not found");
+    localStorage.setItem("Employees", JSON.stringify(employees));
+  } else if (localStorage.getItem("Employees") !== null) {
+    // localStorage exists and it has a value for the 'Employees' key
+    console.log("Data was found.");
+    this.employees = JSON.parse(localStorage.getItem("Employees"));
+  }
   
   /* Methods */
   this.fetchEmployees = function () {
@@ -80,31 +89,25 @@ angular.module("EmployeeData").service("DataService", function () {
     var stateProvided = formattedEmployee["address"]["state"];
     if (stateProvided.length > 2) {
       /* Convert the state to a two character string */
-      formattedEmployee["address"]["state"] = this.abbrState(stateProvided, "abbr");
+      stateProvided = this.abbrState(stateProvided, "abbr");
     }
     var pulledLocalStorageData = JSON.parse(localStorage.getItem("Employees"));
     pulledLocalStorageData.push(formattedEmployee);
-    localStorage.clear("Employees");
     localStorage.setItem("Employees", JSON.stringify(pulledLocalStorageData));
+    window.location.reload();
     return true;
   };
   
   this.removeEmployeeAtIndex = function (employeeIndex) {
     /* The user has tapped the deletion button */
-    console.log(JSON.parse(localStorage.getItem("Employees")));
-    console.log("Begin Employee Deletion");
     var pulledLocalStorageData = JSON.parse(localStorage.getItem("Employees"));
-    console.log("Data: " + pulledLocalStorageData);
-    console.log("Employee at Index: " + pulledLocalStorageData[employeeIndex]);
-    delete pulledLocalStorageData[employeeIndex];
-    localStorage.clear("Employees");
-    localStorage.setItem("Employees", JSON.stringify(localEmployeeData));
-    console.log("End Employee Deletion");
-    window.location.reload();
+    pulledLocalStorageData.splice(employeeIndex, 1);
+    localStorage.setItem("Employees", JSON.stringify(pulledLocalStorageData));
+//     window.location.reload();
   };
   
   this.destroyLocalStorage = function () {
-    localStorage.clear();
+//     localStorage.clear();
   };
   
   /* Caleb Grove's stateToAbbr.js https://gist.github.com/CalebGrove/c285a9510948b633aa47 */

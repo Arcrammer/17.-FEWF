@@ -4,17 +4,28 @@
     Alexander Rhett Crammer  */
 
 // Create the `EmployeeData` module
-var app = angular.module("EmployeeData", []);
+var EmployeeData = angular.module("EmployeeData", []);
 
-app.controller("ListController", function ($scope, DataService) {
+EmployeeData.controller("ListController", function ($scope, DataService) {
   
   /* Properties */
   $scope.people = DataService.fetchEmployees();
   
   /* Methods */
-  $scope.addEmployee = DataService.addEmployee();
+  $scope.addEmployee = function () {
+    // Prevent extra items from being created without intent
+    if (document.getElementById("name").val != "" &&
+        document.getElementById("phone").val != "" &&
+        document.getElementById("street").val != "" &&
+        document.getElementById("city").val != "" &&
+        document.getElementById("state").val != "" &&
+        document.getElementById("ZIP").val != "") {
+      DataService.addEmployee();
+    }
+  }
   
   $scope.removeEmployeeAtIndex = function (employeeIndex) {
+    // Is this too much just to get `employeeIndex` over to `DataService`?
     DataService.removeEmployeeAtIndex(employeeIndex);
   }
   
