@@ -9,7 +9,6 @@ body {
 }
 
 .container {
-  background-color: hotpink;
   color: #fff;
   font-family: "Roboto";
   margin: 5% auto;
@@ -26,16 +25,6 @@ ol, ul {
   list-style-type: none;
   overflow: auto;
   padding: 0;
-}
-
-/* View Buttons */
-.view-buttons {
-  margin: 5% auto 5% 11%; /* These anchors are floating to the left so I can only center them with a margin here */
-  width: 80%;
-}
-
-.view-buttons a {
-  padding: 2.5% 6.5%;
 }
 
 /* Item Creation Form */
@@ -56,7 +45,7 @@ ol, ul {
 
 /* List Items */
 ul.list li {
-  background-color: orange;
+  background-color: rgba(0,0,0,0.35);
   cursor: all-scroll;
   overflow: auto;
   margin: 2.5% 0;
@@ -85,6 +74,17 @@ ul.list .left, ul.list .right {
     .container {
       width: 100%;
     }
+    
+    /* View Buttons */
+    .view-buttons {
+      margin: 5% auto 5%;
+      width: 100%;
+    }
+    
+    .view-buttons a {
+      padding: 2.5% 0;
+      width: 33.423423424%;
+    }
   }
 
 @media only screen
@@ -95,6 +95,25 @@ ul.list .left, ul.list .right {
     .container {
       width: 45%;
     }
+    
+    /* Item Creation Form */
+    .additionForm input {
+      margin-left: 0;
+    }
+    
+    .additionForm button {
+      width: 25%;
+    }
+    
+    /* View Buttons */
+    .view-buttons {
+      margin: 5% auto 5%;
+      width: 100%;
+    }
+    
+    .view-buttons a {
+      width: 33.333333333%;
+    }
   }
 
 @media only screen
@@ -104,5 +123,15 @@ ul.list .left, ul.list .right {
     /* Structure */
     .container {
       width: 360px;
+    }
+  
+    /* View Buttons */
+    .view-buttons {
+      margin: 5% auto 5% 1.1111111111%; /* These anchors are floating to the left so I can only center them with a margin here */
+      width: 100%;
+    }
+    
+    .view-buttons a {
+      padding: 2.5% 8.5464015152%;
     }
   }
