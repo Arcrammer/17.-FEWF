@@ -1,0 +1,108 @@
+/*  Main.css
+    CRUD-Style Application
+    Saturday, 16 May, 2015
+    Alexander Rhett Crammer  */
+
+/* Structure */
+body {
+  background-color: #fafafa;
+}
+
+.container {
+  background-color: hotpink;
+  color: #fff;
+  font-family: "Roboto";
+  margin: 5% auto;
+}
+
+/* Content */
+h4 {
+  padding: 2.5% 0;
+  text-align: center;
+}
+
+/* All Lists */
+ol, ul {
+  list-style-type: none;
+  overflow: auto;
+  padding: 0;
+}
+
+/* View Buttons */
+.view-buttons {
+  margin: 5% auto 5% 11%; /* These anchors are floating to the left so I can only center them with a margin here */
+  width: 80%;
+}
+
+.view-buttons a {
+  padding: 2.5% 6.5%;
+}
+
+/* Item Creation Form */
+.additionForm {
+  margin: 2.5% 0;
+}
+
+.additionForm input {
+  float: left; /* This allows the 'Create' button to sit beside the field rather than stack below it. */
+  margin-left: 2.5%;
+  width: 70%;
+}
+
+.additionForm button {
+  margin-left: 5%;
+  width: 20%;
+}
+
+/* List Items */
+ul.list li {
+  background-color: orange;
+  cursor: all-scroll;
+  overflow: auto;
+  margin: 2.5% 0;
+}
+
+ul.list .left {
+  clear: both;
+  float: left;
+}
+
+ul.list .right {
+  float: right;
+}
+
+ul.list .left, ul.list .right {
+  cursor: text;
+  padding: 4.4510385757%;
+}
+
+/* Media Queries */
+@media only screen
+  and (max-width: 600px) {
+    /* 600px and thinner */
+    
+    /* Structure */
+    .container {
+      width: 100%;
+    }
+  }
+
+@media only screen
+  and (min-width: 601px) {
+    /* 601px and wider */
+    
+    /* Structure */
+    .container {
+      width: 45%;
+    }
+  }
+
+@media only screen
+  and (min-width: 1000px) {
+    /* 1000px and wider */
+    
+    /* Structure */
+    .container {
+      width: 360px;
+    }
+  }
