@@ -5,9 +5,12 @@
     <!-- Links -->
       <link rel="stylesheet" href="Assets/Bootstrap/css/bootstrap.min.css">
       <link rel="stylesheet" href="Assets/Stylesheets/Main.css">
-      <!-- Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="Assets/Stylesheets/Tasks.css">
+    <!-- Fonts -->
+      <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
     <!-- Scripts -->
+      <script src="Assets/Scripts/jQuery.min.js"></script>
+      <script src="Assets/Scripts/jQuery-UI.min.js"></script>
       <script src="Assets/Scripts/angular.min.js"></script>
       <script src="Assets/Scripts/angular-route.min.js"></script>
       <script src="Assets/Scripts/Main.js"></script>
@@ -20,8 +23,9 @@
         <a href="/Lectures" class="btn btn-default">Lectures</a>
       </div> <!-- .view-buttons -->
       <form method="post" class="additionForm">
-        <input class="form-control" type="text" ng-model="taskToCreate">
-        <button class="btn btn-success">Create</button>
+        <input class="form-control" type="text" ng-model="name" placeholder="Create a new task...">
+        <input class="form-control" type="date" ng-model="time">
+        <button class="btn btn-success" ng-click="addTaskNamed(name, time)">Create</button>
       </form>
       <ul class="list">
         <li ng-repeat="task in tasks track by $index">

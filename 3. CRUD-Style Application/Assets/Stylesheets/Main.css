@@ -30,16 +30,17 @@ ol, ul {
 /* Item Creation Form */
 .additionForm {
   margin: 2.5% 0;
+  overflow: auto;
 }
 
-.additionForm input {
+.additionForm input:first-of-type {
   float: left; /* This allows the 'Create' button to sit beside the field rather than stack below it. */
   margin-left: 2.5%;
-  width: 70%;
+  width: 66.5%;
 }
 
 .additionForm button {
-  margin-left: 5%;
+  margin: 0 2.5%;
   width: 20%;
 }
 
@@ -49,10 +50,11 @@ ul.list li {
   cursor: all-scroll;
   overflow: auto;
   margin: 2.5% 0;
+  transition: background-color 100ms, border 150ms;
 }
 
-ul.list li.held-grocery {
-  background-color: rgba(0,0,0,0.50);
+ul.list li.held-item {
+  background-color: rgba(0,0,0,0.75);
   border: 5px solid rgba(255,255,255,0.75);
   box-sizing: border-box; /* Make the border inset */
   padding-bottom: 50px;
@@ -70,6 +72,20 @@ ul.list .right {
 ul.list .left, ul.list .right {
   cursor: text;
   padding: 4.4510385757%;
+}
+
+/* Subtraction Buttons */
+ul.list #subtraction-button {
+  float: right;
+}
+
+ul.list span.short {
+  margin: 0;
+  padding: 2.5%;
+}
+
+.hidden {
+  display: none;
 }
 
 /* Media Queries */

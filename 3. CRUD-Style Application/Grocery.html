@@ -5,8 +5,8 @@
     <!-- Links -->
       <link rel="stylesheet" href="Assets/Bootstrap/css/bootstrap.min.css">
       <link rel="stylesheet" href="Assets/Stylesheets/Main.css">
-      <!-- Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+    <!-- Fonts -->
+      <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
     <!-- Scripts -->
       <script src="Assets/Scripts/jQuery.min.js"></script>
       <script src="Assets/Scripts/jQuery-UI.min.js"></script>
@@ -22,8 +22,8 @@
         <a href="/Lectures" class="btn btn-default">Lectures</a>
       </div> <!-- .view-buttons -->
       <form method="post" class="additionForm">
-        <input class="form-control" type="text" ng-model="taskToCreate">
-        <button class="btn btn-success">Create</button>
+        <input class="form-control" type="text" ng-model="groceryToCreate">
+        <button class="btn btn-success" ng-click="addGrocery(groceryToCreate)">Create</button>
       </form>
       <ul class="list">
         <li ng-repeat="grocery in groceries track by $index">
