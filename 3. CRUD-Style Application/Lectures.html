@@ -33,6 +33,9 @@
         <li ng-repeat="lecture in lectures track by $index">
           <span class="left">{{ lecture.title }}</span>
 <span class="right date">{{ lecture.time }}</span>
+          <span class="right short hidden">
+            <button class="btn btn-danger subtraction-button" ng-click="removeLecture(lecture.title)">Delete</button>
+          </span>
         </li>
       </ul> <!-- .list -->
     </div> <!-- .container -->

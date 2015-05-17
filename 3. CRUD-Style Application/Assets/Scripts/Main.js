@@ -174,6 +174,18 @@ angular.module("CRUDStyleApplication", ["ngRoute"])
     $scope.exportLectureList();
   };
   
+  $scope.removeLecture = function (named) {
+    $lectureNames = [];
+    for (lecture in $scope.lectures) {
+      /* 'lecture' is an index of the array of objects */
+      if ($scope.lectures[lecture].title == named) {
+        $scope.lectures.splice(lecture, 1);
+        /* Now that the lecture has been removed we'll write that to 'localStorage' */
+        $scope.exportLectureList();
+      }
+    }
+  };
+  
   $scope.exportLectureList = function () {
     localStorage.setItem("CSLectures", JSON.stringify($scope.lectures));
   };
@@ -212,7 +224,11 @@ angular.module("CRUDStyleApplication", ["ngRoute"])
     /* Append the subtraction images */
     $("ul.list li").each(function (index, element) {
       $(".date").addClass("hidden");
-     $(element).append('<span class="right short"><button class="btn btn-danger subtraction-button">Delete</button></span>');
+      $(".short").removeClass("hidden");
+      var lectureName = $(element).children()[0].innerHTML
     });
+  }, function () {
+    $(".short").addClass("hidden");
+    $(".date").removeClass("hidden");
   });
 });
