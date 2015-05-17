@@ -28,6 +28,9 @@
       <ul class="list">
         <li ng-repeat="grocery in groceries track by $index">
           <span class="left">{{ grocery.name }}</span>
+          <span class="right short hidden">
+            <button class="btn btn-danger subtraction-button" ng-click="removeGrocery(grocery.name)">Delete</button>
+          </span>
         </li>
       </ul> <!-- .list -->
     </div> <!-- .container -->

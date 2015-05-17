@@ -38,12 +38,23 @@ angular.module("CRUDStyleApplication", ["ngRoute"])
     $scope.exportTodoList();
   };
   
+  $scope.removeTask = function (named) {
+    for (task in $scope.tasks) {
+      /* 'task' is an index of the array of objects */
+      if ($scope.tasks[task].description == named) {
+        $scope.tasks.splice(task, 1);
+        /* Now that the task has been removed we'll write that to 'localStorage' */
+        $scope.exportTodoList();
+      }
+    }
+  };
+  
   $scope.exportTodoList = function () {
     localStorage.setItem("CSTasks", JSON.stringify($scope.tasks));
   };
   
   /* Set-up */
-    $("ul.list").sortable({
+  $("ul.list").sortable({
     "start": function (sortStart, element) {
       $(element.item[0]).addClass("held-item");
     },
@@ -87,6 +98,18 @@ angular.module("CRUDStyleApplication", ["ngRoute"])
       console.log("\"CSTasks\" has been set to the default values.");
     }
   } // Fetch and set '$scope.groceries'
+  
+  $("ul").hover(function () {
+    /* Append the subtraction buttons */
+    $("ul.list li").each(function (index, element) {
+      $(".date").addClass("hidden");
+      $(".short").removeClass("hidden");
+      var taskName = $(element).children()[0].innerHTML
+    });
+  }, function () {
+    $(".short").addClass("hidden");
+    $(".date").removeClass("hidden");
+  });
 })
 
 .controller("GroceryListController", function ($scope) {
@@ -97,9 +120,20 @@ angular.module("CRUDStyleApplication", ["ngRoute"])
   /* Methods */
   $scope.addGrocery = function (grocery) {
     $scope.groceries.push({
-      "name":grocery
+      "name": grocery
     });
     $scope.exportGroceryList();
+  };
+  
+  $scope.removeGrocery = function (named) {
+    for (grocery in $scope.groceries) {
+      /* 'grocery' is an index of the array of objects */
+      if ($scope.groceries[grocery].name == named) {
+        $scope.groceries.splice(grocery, 1);
+        /* Now that the grocery has been removed we'll write that to 'localStorage' */
+        $scope.exportGroceryList();
+      }
+    }
   };
   
   $scope.exportGroceryList = function () {
@@ -149,6 +183,18 @@ angular.module("CRUDStyleApplication", ["ngRoute"])
       console.log("\"CSGroceries\" has been set to the default values.");
     }
   } // Fetch and set '$scope.groceries'
+  
+    $("ul").hover(function () {
+    /* Append the subtraction buttons */
+    $("ul.list li").each(function (index, element) {
+      $(".date").addClass("hidden");
+      $(".short").removeClass("hidden");
+      var groceryName = $(element).children()[0].innerHTML
+    });
+  }, function () {
+    $(".short").addClass("hidden");
+    $(".date").removeClass("hidden");
+  });
 })
 
 .controller("LectureListController", function ($scope) {
@@ -175,7 +221,6 @@ angular.module("CRUDStyleApplication", ["ngRoute"])
   };
   
   $scope.removeLecture = function (named) {
-    $lectureNames = [];
     for (lecture in $scope.lectures) {
       /* 'lecture' is an index of the array of objects */
       if ($scope.lectures[lecture].title == named) {
@@ -221,7 +266,7 @@ angular.module("CRUDStyleApplication", ["ngRoute"])
   }
   
   $("ul").hover(function () {
-    /* Append the subtraction images */
+    /* Append the subtraction buttons */
     $("ul.list li").each(function (index, element) {
       $(".date").addClass("hidden");
       $(".short").removeClass("hidden");

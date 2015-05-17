@@ -30,7 +30,10 @@
       <ul class="list">
         <li ng-repeat="task in tasks track by $index">
           <span class="left">{{ task.description }}</span>
-<span class="right">{{ task.byTime }}</span>
+<span class="right date">{{ task.byTime }}</span>
+          <span class="right short hidden">
+            <button class="btn btn-danger subtraction-button" ng-click="removeTask(task.description)">Delete</button>
+          </span>
         </li>
       </ul> <!-- .list -->
     </div> <!-- .container -->
