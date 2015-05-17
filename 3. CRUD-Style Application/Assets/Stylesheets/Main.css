@@ -51,6 +51,13 @@ ul.list li {
   margin: 2.5% 0;
 }
 
+ul.list li.held-grocery {
+  background-color: rgba(0,0,0,0.50);
+  border: 5px solid rgba(255,255,255,0.75);
+  box-sizing: border-box; /* Make the border inset */
+  padding-bottom: 50px;
+}
+
 ul.list .left {
   clear: both;
   float: left;
