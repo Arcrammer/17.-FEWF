@@ -18,6 +18,11 @@ angular.module("CRUDStyleApplication", ["ngRoute"])
     controller:"GroceryListController"
   });
   
+  $routeProvider.when("/Grocery#:paramenterss", {
+    templateUrl: "Grocery.html",
+    controller: "GroceryListController"
+  });
+  
   $routeProvider.when("/Lectures/", {
     templateUrl:"Lectures.html",
     controller:"LectureListController"
@@ -116,7 +121,7 @@ angular.module("CRUDStyleApplication", ["ngRoute"])
   });
 })
 
-.controller("GroceryListController", function ($scope) {
+.controller("GroceryListController", function ($scope, $routeParams) {
   
   /* Properties */
   $scope.pageTitle = "Groceries";
@@ -144,6 +149,8 @@ angular.module("CRUDStyleApplication", ["ngRoute"])
     // Write the current content of '$scope.groceries' to 'localStorage'
     localStorage.setItem("CSGroceries", JSON.stringify($scope.groceries));
   };
+  
+  console.log($routeParams.paramenterss);
   
   /* Set-up */
   $("ul.list").sortable({
