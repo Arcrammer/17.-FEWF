@@ -22,6 +22,10 @@ angular.module("CRUDStyleApplication", ["ngRoute"])
     templateUrl:"Lectures.html",
     controller:"LectureListController"
   });
+  
+  $routeProvider.otherwise({
+    redirectTo: "/Tasks"
+  });
 })
 
 .controller("TaskViewController", function ($scope) {
