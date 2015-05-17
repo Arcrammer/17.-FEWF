@@ -11,16 +11,22 @@ EmployeeData.controller("ListController", function ($scope, DataService) {
   /* Methods */
   $scope.addEmployee = function () {
     // Prevent extra items from being created without intent
-    if (document.getElementById("name").val != "" &&
-        document.getElementById("phone").val != "" &&
-        document.getElementById("street").val != "" &&
-        document.getElementById("city").val != "" &&
-        document.getElementById("state").val != "" &&
-        document.getElementById("ZIP").val != "") {
+    var newEmployeeName = document.getElementById("name").value;
+    var newEmployeePhone = document.getElementById("phone").value;
+    var newEmployeeStreet = document.getElementById("street").value;
+    var newEmployeeCity = document.getElementById("city").value;
+    var newEmployeeState = document.getElementById("state").value;
+    var newEmployeeZIP = document.getElementById("ZIP").value;
+    if (newEmployeeName != "" &&
+        newEmployeePhone != "" &&
+        newEmployeeStreet != "" &&
+        newEmployeeCity != "" &&
+        newEmployeeState != "" &&
+        newEmployeeZIP != "") {
       document.forms[0].reset();
-      DataService.addEmployee();
-      $scope.updateEmployeeList();
+      $scope.people = DataService.addEmployee(newEmployeeName, newEmployeeStreet, newEmployeeCity, newEmployeeState, newEmployeeZIP, newEmployeePhone);
     }
+    $scope.updateEmployeeList();
   }
   
   $scope.removeEmployeeAtIndex = function (employeeIndex) {

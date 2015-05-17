@@ -74,17 +74,17 @@ angular.module("EmployeeData").service("DataService", function () {
     return JSON.parse(localStorage.getItem("Employees"));
   };
   
-  this.addEmployee = function () {
+  this.addEmployee = function (name, street, city, state, zip, phone) {
     /* Add the new employee to `$scope.people` */
     var formattedEmployee = {
-      "name": document.getElementById("name").value,
+      "name": name,
       "address": {
-        "street": document.getElementById("street").value,
-        "city": document.getElementById("city").value,
-        "state": document.getElementById("state").value,
-        "ZIP": document.getElementById("ZIP").value
+        "street": street,
+        "city": city,
+        "state": state,
+        "ZIP": zip
       },
-      "phone": document.getElementById("phone").value
+      "phone": phone
     };
     var stateProvided = formattedEmployee["address"]["state"];
     if (stateProvided.length > 2) {
@@ -94,8 +94,9 @@ angular.module("EmployeeData").service("DataService", function () {
     var pulledLocalStorageData = JSON.parse(localStorage.getItem("Employees"));
     pulledLocalStorageData.push(formattedEmployee);
     this.employees = pulledLocalStorageData;
+    
     localStorage.setItem("Employees", JSON.stringify(pulledLocalStorageData));
-    return true;
+    return this.employees;
   };
   
   this.removeEmployeeAtIndex = function (employeeIndex) {
