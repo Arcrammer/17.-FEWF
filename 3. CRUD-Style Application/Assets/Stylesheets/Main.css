@@ -88,6 +88,16 @@ ul.list span.short {
   display: none;
 }
 
+.parameters {
+  color: #333;
+  margin: 25% auto;
+}
+
+.parameters-button {
+  margin-left: 15%;
+  width: 75%;
+}
+
 /* Media Queries */
 @media only screen
   and (max-width: 600px) {

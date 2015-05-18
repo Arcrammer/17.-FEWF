@@ -4,16 +4,16 @@
     Alexander Rhett Crammer  */
 
 /* Item Creation Form */
-.additionForm input:first-of-type {
+div[ng-controller="TaskViewController"] .additionForm input:first-of-type {
   width: 97.5%;
 }
 
-.additionForm input:nth-of-type(2) {
+div[ng-controller="TaskViewController"] .additionForm input:nth-of-type(2) {
   float: left;
   margin: 2.5%;
   width: 65%;
 }
 
-.additionForm button {
+div[ng-controller="TaskViewController"] .additionForm button {
   margin: 2.5%;
 }

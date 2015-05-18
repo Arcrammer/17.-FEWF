@@ -3,14 +3,17 @@
     Sunday, 17 May, 2015
     Alexander Rhett Crammer  */
 
-.additionForm input:first-of-type, .additionForm input, .additionForm select, .additionForm option {
+div[ng-controller="LectureListController"] .additionForm input:first-of-type, 
+div[ng-controller="LectureListController"] .additionForm input, 
+div[ng-controller="LectureListController"] .additionForm select, 
+div[ng-controller="LectureListController"] .additionForm option {
   color: #000;
   float: left;
   margin: 2.5%;
   width: 45%;
 }
 
-.additionForm button {
+div[ng-controller="LectureListController"] .additionForm button {
   clear: both;
   width: 95%;
 }

@@ -8,22 +8,22 @@ angular.module("CRUDStyleApplication", ["ngRoute"])
 .config(function ($routeProvider) {
   
   /* Routes */
-  $routeProvider.when("/Tasks/", {
+  $routeProvider.when("/Tasks", {
     templateUrl:"Tasks.html",
     controller:"TaskViewController"
   })
   
-  .when("/Grocery/", {
+  .when("/Grocery", {
     templateUrl:"Grocery.html",
     controller:"GroceryListController"
   })
   
-  .when("/Lectures/", {
+  .when("/Lectures", {
     templateUrl:"Lectures.html",
     controller:"LectureListController"
   })
   
-  .when("/Parameters/:paramerTest", {
+  .when("/Parameters/:randomParameter", {
     templateUrl: "Parameters.html",
     controller: "UghController"
   })
@@ -34,8 +34,7 @@ angular.module("CRUDStyleApplication", ["ngRoute"])
 })
 
 .controller("UghController", function ($scope, $routeParams) {
-  console.log($routeParams);
-  $scope.someContent = $routeParams.paramerTest;
+  $scope.someContent = $routeParams.randomParameter;
 })
 
 .controller("TaskViewController", function ($scope) {

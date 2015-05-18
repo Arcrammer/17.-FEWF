@@ -1,0 +1,8 @@
+/*  Groceries.css
+    CRUD-Style Application
+    Monday, 18 May, 2015
+    Alexander Rhett Crammer  */
+
+div[ng-controller="GroceryListController"] .additionForm input:first-of-type {
+  width: 65%;
+}

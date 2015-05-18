@@ -1,8 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script>
-      window.location.replace("/Tasks");
-    </script>
+    <title>CRUD-Style Application</title>
+    <!-- Links -->
+      <link rel="stylesheet" href="Assets/Bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="Assets/Stylesheets/Main.css">
+      <link rel="stylesheet" href="Assets/Stylesheets/Tasks.css">
+      <link rel="stylesheet" href="Assets/Stylesheets/Groceries.css">
+      <link rel="stylesheet" href="Assets/Stylesheets/Lectures.css">
+    <!-- Fonts -->
+      <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+    <!-- Scripts -->
+      <script src="Assets/Scripts/jQuery.min.js"></script>
+      <script src="Assets/Scripts/jQuery-UI.min.js"></script>
+      <script src="Assets/Scripts/angular.min.js"></script>
+      <script src="Assets/Scripts/angular-route.min.js"></script>
+      <script src="Assets/Scripts/Main.js"></script>
   </head>
+  <body ng-app="CRUDStyleApplication">
+    <div class="container">
+      <div class="view-buttons btn-group">
+        <a href="#/Tasks" class="btn btn-default">Tasks</a>
+        <a href="#/Grocery" class="btn btn-default">Groceries</a>
+        <a href="#/Lectures" class="btn btn-default">Lectures</a>
+      </div> <!-- .view-buttons -->
+      <div ng-view>
+      </div>
+      <a href="#/Parameters/432789" class="btn btn-default parameters-button">Parameters</a>
+    </div> <!-- .container -->
+  </body>
 </html>
