@@ -1,38 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>CRUD-Style Application</title>
-    <!-- Links -->
-      <link rel="stylesheet" href="Assets/Bootstrap/css/bootstrap.min.css">
-      <link rel="stylesheet" href="Assets/Stylesheets/Main.css">
-    <!-- Fonts -->
-      <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
-    <!-- Scripts -->
-      <script src="Assets/Scripts/jQuery.min.js"></script>
-      <script src="Assets/Scripts/jQuery-UI.min.js"></script>
-      <script src="Assets/Scripts/angular.min.js"></script>
-      <script src="Assets/Scripts/angular-route.min.js"></script>
-      <script src="Assets/Scripts/Main.js"></script>
-  </head>
-  <body ng-app="CRUDStyleApplication">
-    <div class="container" ng-controller="GroceryListController">
-      <div class="view-buttons btn-group">
-        <a href="/Tasks" class="btn btn-default">Tasks</a>
-        <a href="/Grocery" class="btn btn-default active">Groceries</a>
-        <a href="/Lectures" class="btn btn-default">Lectures</a>
-      </div> <!-- .view-buttons -->
-      <form method="post" class="additionForm">
-        <input class="form-control" type="text" ng-model="groceryToCreate">
-        <button class="btn btn-success" ng-click="addGrocery(groceryToCreate)">Create</button>
-      </form>
-      <ul class="list">
-        <li ng-repeat="grocery in groceries track by $index">
-          <span class="left">{{ grocery.name }}</span>
-          <span class="right short hidden">
-            <button class="btn btn-danger subtraction-button" ng-click="removeGrocery(grocery.name)">Delete</button>
-          </span>
-        </li>
-      </ul> <!-- .list -->
-    </div> <!-- .container -->
-  </body>
-</html>
+<div ng-controller="GroceryListController">
+  <form method="post" class="additionForm">
+    <input class="form-control" placeholder="Add Grocery..." type="text" ng-model="groceryToCreate">
+    <button class="btn btn-success" ng-click="addGrocery(groceryToCreate)">Create</button>
+  </form>
+  <ul class="list">
+    <li ng-repeat="grocery in groceries track by $index">
+      <span class="left">{{ grocery.name }}</span>
+      <span class="right short hidden">
+        <button class="btn btn-danger subtraction-button" ng-click="removeGrocery(grocery.name)">Delete</button>
+      </span>
+    </li>
+  </ul> <!-- .list -->
+</div>

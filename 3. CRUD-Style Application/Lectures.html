@@ -1,43 +1,18 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>CRUD-Style Application</title>
-    <!-- Links -->
-      <link rel="stylesheet" href="Assets/Bootstrap/css/bootstrap.min.css">
-      <link rel="stylesheet" href="Assets/Stylesheets/Main.css">
-      <link rel="stylesheet" href="Assets/Stylesheets/Lectures.css">
-    <!-- Fonts -->
-      <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
-    <!-- Scripts -->
-      <script src="Assets/Scripts/jQuery.min.js"></script>
-      <script src="Assets/Scripts/jQuery-UI.min.js"></script>
-      <script src="Assets/Scripts/angular.min.js"></script>
-      <script src="Assets/Scripts/angular-route.min.js"></script>
-      <script src="Assets/Scripts/Main.js"></script>
-  </head>
-  <body ng-app="CRUDStyleApplication">
-    <div class="container" ng-controller="LectureListController">
-      <div class="view-buttons btn-group">
-        <a href="/Tasks" class="btn btn-default">Tasks</a>
-        <a href="/Grocery" class="btn btn-default">Groceries</a>
-        <a href="/Lectures" class="btn btn-default active">Lectures</a>
-      </div> <!-- .view-buttons -->
-      <form method="post" class="additionForm">
-        <input class="form-control" type="text" placeholder="Name" ng-model="title">
-        <input class="form-control" type="text" placeholder="Professor" ng-model="professor">
-        <input class="form-control" type="text" placeholder="Medium" ng-model="medium">
-        <input class="form-control" type="text" placeholder="Date and Time" ng-model="time">
-        <button class="btn btn-success" ng-click="addLecture(title, professor, medium, time)">Create</button>
-      </form>
-      <ul class="list">
-        <li ng-repeat="lecture in lectures track by $index">
-          <span class="left">{{ lecture.title }}</span>
-<span class="right date">{{ lecture.time }}</span>
-          <span class="right short hidden">
-            <button class="btn btn-danger subtraction-button" ng-click="removeLecture(lecture.title)">Delete</button>
-          </span>
-        </li>
-      </ul> <!-- .list -->
-    </div> <!-- .container -->
-  </body>
-</html>
+<div ng-controller="LectureListController">
+  <form method="post" class="additionForm">
+    <input class="form-control" type="text" placeholder="Name" ng-model="title">
+    <input class="form-control" type="text" placeholder="Professor" ng-model="professor">
+    <input class="form-control" type="text" placeholder="Medium" ng-model="medium">
+    <input class="form-control" type="text" placeholder="Date and Time" ng-model="time">
+    <button class="btn btn-success" ng-click="addLecture(title, professor, medium, time)">Create</button>
+  </form>
+  <ul class="list">
+    <li ng-repeat="lecture in lectures track by $index">
+      <span class="left">{{ lecture.title }}</span>
+      <span class="right date">{{ lecture.time }}</span>
+      <span class="right short hidden">
+        <button class="btn btn-danger subtraction-button" ng-click="removeLecture(lecture.title)">Delete</button>
+      </span>
+    </li>
+  </ul> <!-- .list -->
+</div>
