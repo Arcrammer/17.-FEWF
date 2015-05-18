@@ -11,26 +11,36 @@ angular.module("CRUDStyleApplication", ["ngRoute"])
   $routeProvider.when("/Tasks/", {
     templateUrl:"Tasks.html",
     controller:"TaskViewController"
-  });
+  })
   
-  $routeProvider.when("/Grocery/", {
+  .when("/Grocery/", {
     templateUrl:"Grocery.html",
     controller:"GroceryListController"
-  });
+  })
   
-  $routeProvider.when("/Grocery#:paramenterss", {
+  .when("/Grocery/", {
     templateUrl: "Grocery.html",
     controller: "GroceryListController"
-  });
+  })
   
-  $routeProvider.when("/Lectures/", {
+  .when("/Lectures/", {
     templateUrl:"Lectures.html",
     controller:"LectureListController"
-  });
+  })
   
-  $routeProvider.otherwise({
+  .when("/Parameters/:id", {
+    templateUrl: "Parameters.html",
+    controller: "UghController"
+  })
+  
+  .otherwise({
     redirectTo: "/Tasks"
   });
+})
+
+.controller("UghController", function ($scope, $routeParams) {
+  console.log($routeParams);
+  $scope.someContent = $routeParams.id;
 })
 
 .controller("TaskViewController", function ($scope) {
@@ -113,7 +123,7 @@ angular.module("CRUDStyleApplication", ["ngRoute"])
     $("ul.list li").each(function (index, element) {
       $(".date").addClass("hidden");
       $(".short").removeClass("hidden");
-      var taskName = $(element).children()[0].innerHTML
+      var taskName = $(element).children()[0].innerHTML;
     });
   }, function () {
     $(".short").addClass("hidden");
@@ -121,7 +131,7 @@ angular.module("CRUDStyleApplication", ["ngRoute"])
   });
 })
 
-.controller("GroceryListController", function ($scope, $routeParams) {
+.controller("GroceryListController", function ($scope) {
   
   /* Properties */
   $scope.pageTitle = "Groceries";
@@ -149,8 +159,6 @@ angular.module("CRUDStyleApplication", ["ngRoute"])
     // Write the current content of '$scope.groceries' to 'localStorage'
     localStorage.setItem("CSGroceries", JSON.stringify($scope.groceries));
   };
-  
-  console.log($routeParams.paramenterss);
   
   /* Set-up */
   $("ul.list").sortable({
@@ -200,7 +208,7 @@ angular.module("CRUDStyleApplication", ["ngRoute"])
     $("ul.list li").each(function (index, element) {
       $(".date").addClass("hidden");
       $(".short").removeClass("hidden");
-      var groceryName = $(element).children()[0].innerHTML
+      var groceryName = $(element).children()[0].innerHTML;
     });
   }, function () {
     $(".short").addClass("hidden");
@@ -281,7 +289,7 @@ angular.module("CRUDStyleApplication", ["ngRoute"])
     $("ul.list li").each(function (index, element) {
       $(".date").addClass("hidden");
       $(".short").removeClass("hidden");
-      var lectureName = $(element).children()[0].innerHTML
+      var lectureName = $(element).children()[0].innerHTML;
     });
   }, function () {
     $(".short").addClass("hidden");
