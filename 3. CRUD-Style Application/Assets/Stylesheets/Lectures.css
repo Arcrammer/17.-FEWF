@@ -1,0 +1,16 @@
+/*  Lectures.css
+    CRUD-Style Application
+    Sunday, 17 May, 2015
+    Alexander Rhett Crammer  */
+
+.additionForm input:first-of-type, .additionForm input, .additionForm select, .additionForm option {
+  color: #000;
+  float: left;
+  margin: 2.5%;
+  width: 45%;
+}
+
+.additionForm button {
+  clear: both;
+  width: 95%;
+}

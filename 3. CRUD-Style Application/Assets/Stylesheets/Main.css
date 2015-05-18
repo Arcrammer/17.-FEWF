@@ -1,0 +1,160 @@
+/*  Main.css
+    CRUD-Style Application
+    Saturday, 16 May, 2015
+    Alexander Rhett Crammer  */
+
+/* Structure */
+body {
+  background-color: #fafafa;
+}
+
+.container {
+  color: #fff;
+  font-family: "Roboto";
+  margin: 5% auto;
+}
+
+/* Content */
+h4 {
+  padding: 2.5% 0;
+  text-align: center;
+}
+
+/* All Lists */
+ol, ul {
+  list-style-type: none;
+  overflow: auto;
+  padding: 0;
+}
+
+/* Item Creation Form */
+.additionForm {
+  margin: 2.5% 0;
+  overflow: auto;
+}
+
+.additionForm input:first-of-type {
+  float: left; /* This allows the 'Create' button to sit beside the field rather than stack below it. */
+  margin-left: 2.5%;
+  width: 66.5%;
+}
+
+.additionForm button {
+  margin: 0 2.5%;
+  width: 20%;
+}
+
+/* List Items */
+ul.list li {
+  background-color: rgba(0,0,0,0.35);
+  cursor: all-scroll;
+  overflow: auto;
+  margin: 2.5% 0;
+  transition: background-color 100ms, border 150ms;
+}
+
+ul.list li.held-item {
+  background-color: rgba(0,0,0,0.75);
+  border: 5px solid rgba(255,255,255,0.75);
+  box-sizing: border-box; /* Make the border inset */
+  padding-bottom: 50px;
+}
+
+ul.list .left {
+  clear: both;
+  float: left;
+}
+
+ul.list .right {
+  float: right;
+}
+
+ul.list .left, ul.list .right {
+  cursor: text;
+  padding: 4.4510385757%;
+}
+
+/* Subtraction Buttons */
+ul.list #subtraction-button {
+  float: right;
+}
+
+ul.list span.short {
+  margin: 0;
+  padding: 2%;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Media Queries */
+@media only screen
+  and (max-width: 600px) {
+    /* 600px and thinner */
+    
+    /* Structure */
+    .container {
+      width: 100%;
+    }
+    
+    /* View Buttons */
+    .view-buttons {
+      margin: 5% auto 5%;
+      width: 100%;
+    }
+    
+    .view-buttons a {
+      padding: 2.5% 0;
+      width: 33.423423424%;
+    }
+  }
+
+@media only screen
+  and (min-width: 601px) {
+    /* 601px and wider */
+    
+    /* Structure */
+    .container {
+      width: 45%;
+    }
+    
+    /* Item Creation Form */
+    .additionForm input {
+      margin-left: 0;
+    }
+    
+    .additionForm button {
+      width: 25%;
+    }
+    
+    /* View Buttons */
+    .view-buttons {
+      margin: 5% auto 5%;
+      width: 100%;
+    }
+    
+    .view-buttons a {
+      width: 33.333333333%;
+    }
+  }
+
+@media only screen
+  and (min-width: 1000px) {
+    /* 1000px and wider */
+    
+    /* Structure */
+    .container {
+      width: 360px;
+    }
+  
+    /* View Buttons */
+    .view-buttons {
+      margin: 5% auto 5% 1.1111111111%; /* These anchors are floating to the left so I can only center them with a margin here */
+      width: 100%;
+    }
+    
+    .view-buttons a {
+      padding: 2.5% 8.5464015152%;
+    }
+  }
