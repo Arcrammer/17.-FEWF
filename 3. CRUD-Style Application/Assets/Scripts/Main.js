@@ -44,10 +44,17 @@ angular.module("CRUDStyleApplication", ["ngRoute"])
   
   /* Methods */
   $scope.addTaskNamed = function (named, byDate) {
-    $scope.tasks.push({
-      "description": named,
-      "byTime": byDate.toISOString().substr(0,10)
-    });
+    if (byDate !== null) {
+      $scope.tasks.push({
+        "description": named,
+        "byTime": ""
+      });
+    } else {
+      $scope.tasks.push({
+        "description": named,
+        "byTime": byDate.toISOString().substr(0,10)
+      });
+    }
     $scope.exportTodoList();
   };
   
