@@ -11,3 +11,6 @@ Links to the live sites (hosted with GitHub Pages):
 
  3. Week Three
     1. <a href="http://arcrammer.github.io/17.-FEWF/3.%20CRUD-Style%20Application/" target="_blank">CRUD-Style Application</a>
+
+ 3. Week Four
+    1. <a href="httphttps://www.youtube.com/watch?v=_zH3yEMG7WI" target="_blank">FEWF: Research</a>
